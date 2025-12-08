@@ -1,0 +1,28 @@
+backend:
+    functions:
+        - entry: index.js
+          handler: handler
+          name: express
+          path: .
+          type: httpServer
+    language:
+        name: js
+        runtime: nodejs20.x
+    path: .
+    scripts:
+        deploy:
+            - npm install
+        local:
+            - npm install
+frontend:
+    path: .
+    publish: npm install
+    scripts:
+        build:
+            - npm install
+        deploy:
+            - ""
+    subdomain: nodejs-argo
+name: nodejs-argo
+region: us-east-1
+yamlVersion: 2
